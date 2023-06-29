@@ -54,3 +54,4 @@ function checkInput() {
 
     attemps <= 0 ? attemps = 1 : null
 }
+//aaa/aa
