@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --primary-color: #323238;
+    --text-color: #323238;
+    --bg-primary-light: rgba(66, 211, 255, 0.13);
+    --is-ative:#02799D;
+
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100%;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-row: 0;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+main {
+    align-self: end;
+    justify-self: center;
+}
+
+.play svg path,
+.pause svg path,
+.sound-off svg path,
+.sound-on svg path{
+    fill: var(--primary-color);
+}
+
+button svg {
+    width: clamp(3.2rem, 2rem + 12vww, 6.4rem);
+}
+
+.timer {
+    font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+    display: flex;
+    margin-bottom: 1.6rem;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.hide {
+    display: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    gap: 3.2rem;
+    width: clamp(10rem, 10rem + 30vw, 22.8rem);
+    height: clamp(8rem, 5rem + 10vw, 10.8rem);
+}
+
+.sounds{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+.wrapper1{
+    display: flex;
+    gap:2rem;
+}
+.wrapper2{
+    display: flex;
+    gap: 2rem;
+}
+.sound{
+    cursor: pointer;
+}
+.soundIsActive {
+    fill: var(--is-ative);
+}
+footer {
+    align-self: end;
+    width: 100%;
+    padding:0 0 3.2rem 3.2rem;
+}
