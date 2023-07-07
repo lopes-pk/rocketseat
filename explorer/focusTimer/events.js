@@ -11,7 +11,10 @@ import {
     soundCoffeShop,
     soundFirePlace,
     soundFlorest,
-    soundRain
+    soundRain,
+    lightMode,
+    darkMode,
+    $html
 
 } from './elements.js'
 
@@ -96,5 +99,17 @@ export default function ({ sound, controls, timer }) {
     soundFirePlace.addEventListener('click', function () {
         sound.changeMusic('./assets/Lareira.wav')
         changeToMute()
+    })
+
+    lightMode.addEventListener('click', function(){
+        lightMode.classList.add('hide')
+        darkMode.classList.remove('hide')
+        $html.classList.toggle('dark-mode')
+        
+    })
+    darkMode.addEventListener('click', function(){
+        lightMode.classList.remove('hide')
+        darkMode.classList.add('hide')
+        $html.classList.toggle('dark-mode')
     })
 }

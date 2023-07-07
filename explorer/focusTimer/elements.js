@@ -14,6 +14,9 @@ const soundFlorest = document.querySelector(".soundTree")
 const soundRain = document.querySelector(".soundRain")
 const soundCoffeShop = document.querySelector(".soundCoffeShop")
 const soundFirePlace = document.querySelector(".soundFirePlace")
+const darkMode = document.querySelector(".dark-mode-icon")
+const lightMode = document.querySelector(".light-mode-icon")
+const $html = document.querySelector("html")
 
 
 export {
@@ -31,5 +34,8 @@ export {
     soundCoffeShop,
     soundFirePlace,
     soundRain,
-    soundFlorest
+    soundFlorest,
+    darkMode,
+    lightMode,
+    $html
 }
