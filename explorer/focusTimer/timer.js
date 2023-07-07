@@ -56,13 +56,13 @@ export default function Timer({
     }
 
     function doAddMinutes(minutesAdded){
-        const newMinutes= Number(minuteDisplay.textContent) + minutesAdded
-        updateDisplay(newMinutes,0)
+        const newMinutes= Number(minuteDisplay.textContent) + minutesAdded   
+        updateDisplay(newMinutes,secondsDisplay.textContent)
     }
 
     function doLessMinutes(minutesLessed){
         const newMinutes = Number(minuteDisplay.textContent) - minutesLessed 
-        newMinutes = newMinutes < 0? 0 : updateDisplay(newMinutes,0)
+        newMinutes = newMinutes < 0? 0 : updateDisplay(newMinutes,secondsDisplay.textContent)
     }
     
     return ({
