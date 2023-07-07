@@ -83,7 +83,6 @@ export default function ({ sound, controls, timer }) {
         sound.changeMusic('./assets/Floresta.wav')
         changeToMute()
     })
-
     soundRain.addEventListener('click', function () {
         sound.changeMusic('./assets/Chuva.wav')
         changeToMute()
