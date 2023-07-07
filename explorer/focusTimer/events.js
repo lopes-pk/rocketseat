@@ -5,14 +5,21 @@ import {
     buttonStop,
     buttonSoundOn,
     buttonSoundOff,
-    cards,
+    cardsMusic,
     buttonLessMinutes,
-    buttonMoreMinutes
+    buttonMoreMinutes,
+    soundCoffeShop,
+    soundFirePlace,
+    soundFlorest,
+    soundRain
 
 } from './elements.js'
 
-
-export default function ({ sound,controls,timer }) {
+function changeToMute() {
+    buttonSoundOn.classList.add('hide')
+    buttonSoundOff.classList.remove('hide')
+}
+export default function ({ sound, controls, timer }) {
     buttonPlay.addEventListener('click', function () {
         controls.play()
         timer.countDown()
@@ -31,22 +38,22 @@ export default function ({ sound,controls,timer }) {
         sound.pressButton()
     })
 
-    buttonMoreMinutes.addEventListener('click', function(){
+    buttonMoreMinutes.addEventListener('click', function () {
         timer.doAddMinutes(5)
     })
-    buttonLessMinutes.addEventListener('click', function(){
+    buttonLessMinutes.addEventListener('click', function () {
         timer.doLessMinutes(5)
     })
 
     buttonSoundOn.addEventListener('click', function () {
-        buttonSoundOn.classList.add('hide')
-        buttonSoundOff.classList.remove('hide')
-        sound.bgAudio.pause()
+        changeToMute()
+        sound.stopMusic()
     })
+
     buttonSoundOff.addEventListener('click', function () {
         buttonSoundOff.classList.add('hide')
         buttonSoundOn.classList.remove('hide')
-        sound.bgAudio.play()
+        sound.startMusic()
     })
 
     buttonSet.addEventListener('click', function () {
@@ -61,18 +68,34 @@ export default function ({ sound,controls,timer }) {
         timer.updateMinutes(newMinutes)
     })
 
-    cards.forEach((card,i) => {
+    cardsMusic.forEach((card) => {
         card.addEventListener('click', function () {
             // Remove a classe 'soundIsActive' de todos os cards
-            cards.forEach(card => {
+            cardsMusic.forEach(card => {
                 card.classList.remove('soundIsActive');
             });
             // Adiciona a classe 'soundIsActive' apenas ao card clicado
             this.classList.add('soundIsActive');
-            if(i == 0){
-                alert('test')
-            }
-            
         });
     });
+
+    soundFlorest.addEventListener('click', function () {
+        sound.changeMusic('./assets/Floresta.wav')
+        changeToMute()
+    })
+
+    soundRain.addEventListener('click', function () {
+        sound.changeMusic('./assets/Chuva.wav')
+        changeToMute()
+    })
+
+    soundCoffeShop.addEventListener('click', function () {
+        sound.changeMusic('./assets/Cafeteria.wav')
+        changeToMute()
+    })
+
+    soundFirePlace.addEventListener('click', function () {
+        sound.changeMusic('./assets/Lareira.wav')
+        changeToMute()
+    })
 }

@@ -9,7 +9,12 @@ const buttonSoundOn = document.querySelector('.sound-on')
 const buttonSoundOff = document.querySelector('.sound-off')
 const minuteDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
-const cards = Array.from(document.querySelectorAll('.sound'))
+const cardsMusic = Array.from(document.querySelectorAll('.sound'))
+const soundFlorest = document.querySelector(".soundTree")
+const soundRain = document.querySelector(".soundRain")
+const soundCoffeShop = document.querySelector(".soundCoffeShop")
+const soundFirePlace = document.querySelector(".soundFirePlace")
+
 
 export {
     buttonPlay,
@@ -20,7 +25,11 @@ export {
     buttonSoundOff,
     minuteDisplay,
     secondsDisplay,
-    cards,
+    cardsMusic,
     buttonMoreMinutes,
-    buttonLessMinutes
+    buttonLessMinutes,
+    soundCoffeShop,
+    soundFirePlace,
+    soundRain,
+    soundFlorest
 }
