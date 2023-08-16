@@ -1,8 +1,8 @@
 export class Router {
     routes = {}
 
-    add(routeName, page) {
-        this.routes[routeName] = page
+    add(path, page) {
+        this.routes[path] = page
     }
     route(event) {
         event = event || window.event

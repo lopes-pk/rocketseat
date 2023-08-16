@@ -12,7 +12,6 @@ export const Modal = {
     
 }
 
-
 Modal.btnClose.onclick = () => Modal.close()
 
 window.addEventListener('keydown', event => {
